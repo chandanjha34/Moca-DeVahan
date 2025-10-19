@@ -1,0 +1,92 @@
+/* 🎨 Cyberpunk theme */
+
+body {
+  background: #0a0a0f;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Navbar */
+.cyber-nav {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(0, 255, 231, 0.2);
+  padding: 1rem;
+}
+
+.cyber-nav-link {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #cfcfcf;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.cyber-nav-link:hover {
+  color: #00ffe7;
+}
+
+/* Buttons */
+.cyber-btn-primary {
+  background: linear-gradient(90deg, #00ffe7, #0077ff);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.cyber-btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.cyber-btn-danger {
+  background: linear-gradient(90deg, #ff0055, #ff7700);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.cyber-btn-danger:hover {
+  transform: scale(1.05);
+}
+
+/* Feature cards */
+.cyber-feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.2s, border 0.2s;
+}
+.cyber-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #00ffe7;
+}
+
+/* Vehicle cards */
+.cyber-vehicle-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.cyber-vehicle-card:hover {
+  transform: translateY(-6px);
+}
+
+.cyber-vehicle-info {
+  padding: 1.5rem;
+}
+
+/* FAQ */
+.faq button {
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+.faq button:hover {
+  color: #00ffe7;
+}

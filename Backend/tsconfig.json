@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node16", 
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "module": "node16",
+    "target": "es2020",
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
