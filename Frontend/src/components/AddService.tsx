@@ -21,7 +21,7 @@ function AddService() {
 
     try {
       // Step 1: Upload JSON to 0G (mock API)
-      const uploadRes = await fetch("https://moca-devahan-f734.onrender.comapi/uploadJSON", {
+      const uploadRes = await fetch("https://moca-devahan-f734.onrender.com/api/uploadJSON", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -29,7 +29,7 @@ function AddService() {
       const data = await uploadRes.json();
       const hash = data.rootHash;
       // Step 2: Save hash to MongoDB
-      await fetch("https://moca-devahan-f734.onrender.comaddService", {
+      await fetch("https://moca-devahan-f734.onrender.com/addService", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ vehicleId: form.vehicleId, serviceHash: hash }),

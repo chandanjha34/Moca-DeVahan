@@ -238,7 +238,7 @@ const handleSend = async (e: React.FormEvent) => {
   try {
     if (mode === 'old' && activeCar) {
       // 1️⃣ Fetch service hashes using POST
-      const hashRes = await fetch("https://moca-devahan-f734.onrender.comaddService/display", {
+      const hashRes = await fetch("https://moca-devahan-f734.onrender.com/addService/display", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ vehicleId: tokenId }),
@@ -253,7 +253,7 @@ const handleSend = async (e: React.FormEvent) => {
       // 2️⃣ For each hash, fetch JSON data from 0G
       const recordPromises = hashData.serviceHashes.map(async (hash: string) => {
         try {
-          const res = await fetch(`https://moca-devahan-f734.onrender.comapi/fetchJSON/${hash}`);
+          const res = await fetch(`https://moca-devahan-f734.onrender.com/api/fetchJSON/${hash}`);
           const json = await res.json();
           if (json.success) return json.data;
           console.warn("Failed to fetch record for hash:", hash);
@@ -272,7 +272,7 @@ const handleSend = async (e: React.FormEvent) => {
       }
       console.log(recordData)
       // 3️⃣ Send all service records + query to 0G Compute
-      const aiRes = await fetch("https://moca-devahan-f734.onrender.comapi/ask0GCompute", {
+      const aiRes = await fetch("https://moca-devahan-f734.onrender.com/api/ask0GCompute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
