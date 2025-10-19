@@ -52,7 +52,7 @@ const AuthenticationModal: React.FC<AuthenticationModalProps> = ({ isOpen, onClo
   const resolveRoleServer = async (userEmail: string): Promise<Role> => {
     try {
       console.log('Resolving role for email:', userEmail);
-      const res = await fetch(`http://localhost:3000/auth/credentials/${userEmail}`);
+      const res = await fetch(`https://moca-devahan.onrender.com/auth/credentials/${userEmail}`);
       if (!res.ok) throw new Error('Failed to fetch user role');
       const data = await res.json();
       return (data.role as Role) || 'dealer';
@@ -109,7 +109,7 @@ const AuthenticationModal: React.FC<AuthenticationModalProps> = ({ isOpen, onClo
     }
 
     try {
-      const baseUrl = 'http://localhost:3000/auth';
+      const baseUrl = 'https://moca-devahan.onrender.com/auth';
       const endpoint = `${baseUrl}/${role === 'user' ? 'customer' : role}/signup`;
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       console.log('Submitting to', endpoint, 'with payload', payload);
