@@ -1,6 +1,6 @@
 import React from 'react';
 import { Car, Plus, Train as Transfer, History, Settings, Zap, Wallet2, Shield, User, Building2, Wrench } from 'lucide-react';
-import NavLink from './Navlink';
+import NavLink from './NavLink';
 import { useLanguage } from '../context/LanguageContext';
 import type { RootState } from '../Redux/store'
 import { useSelector } from 'react-redux';
