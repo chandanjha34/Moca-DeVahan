@@ -110,11 +110,13 @@ const AuthenticationModal: React.FC<AuthenticationModalProps> = ({ isOpen, onClo
 
     try {
       const baseUrl = 'https://moca-devahan-f734.onrender.com/auth';
-      const endpoint = `${baseUrl}/${role === 'user' ? 'customer' : role}/signup`;
+      const endpoint = `${baseUrl}/${role}/signup`;
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       console.log('Submitting to', endpoint, 'with payload', payload);
       const res = await fetch(endpoint, { method: 'POST', headers, body: JSON.stringify(payload) });
+      console.log('Response status:', res.status);
       const data = await res.json();
+      console.log('Response data:', data);
       console.log(data);
       if (res.ok) {
         dispatch(assignEmail(data.email || ''));
@@ -122,6 +124,7 @@ const AuthenticationModal: React.FC<AuthenticationModalProps> = ({ isOpen, onClo
         alert('move to signed-in state');
         onClose();
       } else {
+        console.error('Form submit failed:', data);
         alert(data.message || 'Failed');
       }
     } catch (err) {
